@@ -87,6 +87,8 @@ class OpenVLAInference:
         if task_description is not None:
             if task_description != self.task_description:
                 self.reset(task_description)
+        else:
+            task_description = self.task_description
 
         assert image.dtype == np.uint8
         image = self._resize_image(image)
